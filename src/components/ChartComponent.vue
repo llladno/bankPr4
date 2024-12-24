@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, onMounted } from "vue";
-import { Chart } from "chart.js/auto";
+import { ref, watch, onMounted } from 'vue'
+import { Chart } from 'chart.js/auto'
 
 // Пропсы
 const props = defineProps({
@@ -20,43 +20,43 @@ const props = defineProps({
   },
   type: {
     type: String,
-    default: "line",
-  }
-});
+    default: 'line',
+  },
+})
 
 // Локальные переменные
-const chartCanvas = ref<HTMLCanvasElement | null>(null);
-let chartInstance: Chart | null = null;
+const chartCanvas = ref<HTMLCanvasElement | null>(null)
+let chartInstance: Chart | null = null
 
 // Функция для отрисовки графика
 const renderChart = () => {
   if (chartInstance) {
-    chartInstance.destroy(); // Удалить старый график
+    chartInstance.destroy() // Удалить старый график
   }
 
   if (chartCanvas.value) {
-    const ctx = chartCanvas.value.getContext("2d")!;
+    const ctx = chartCanvas.value.getContext('2d')!
     chartInstance = new Chart(ctx, {
       type: props.type, // Тип графика
       data: props.chartData,
       options: props.chartOptions,
-    });
+    })
   }
-};
+}
 
 // Хук для инициализации
 onMounted(() => {
-  renderChart();
-});
+  renderChart()
+})
 
 // Наблюдение за изменением chartData
 watch(
   () => props.chartData,
   () => {
-    renderChart();
+    renderChart()
   },
-  { deep: true }
-);
+  { deep: true },
+)
 </script>
 
 <style scoped>

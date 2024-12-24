@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import GuideView from "@/views/GuideView.vue";
-import OrderView from "@/views/OrderView.vue";
-import PrintResultView from "@/views/PrintResultView.vue";
-import PrintQittanceView from "@/views/PrintQittanceView.vue";
-import PrintDocumentView from "@/views/PrintDocumentView.vue";
-import ReportView from "@/views/ReportView.vue";
+import GuideView from '@/views/GuideView.vue'
+import OrderView from '@/views/OrderView.vue'
+import PrintResultView from '@/views/PrintResultView.vue'
+import PrintQittanceView from '@/views/PrintQittanceView.vue'
+import PrintDocumentView from '@/views/PrintDocumentView.vue'
+import ReportView from '@/views/ReportView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -52,7 +52,7 @@ const router = createRouter({
       path: '/report',
       name: 'report',
       component: ReportView,
-    }
+    },
   ],
 })
 

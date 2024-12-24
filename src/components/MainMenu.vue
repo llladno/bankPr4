@@ -7,13 +7,12 @@
   </aside>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
-@import "@/assets/variables";
+@import '@/assets/variables';
 
-.bar{
+.bar {
   width: 200px;
   min-height: 100vh;
   background: $dark-blue;
@@ -28,9 +27,8 @@
 }
 
 @media print {
-  .bar{
+  .bar {
     display: none;
   }
 }
-
 </style>
